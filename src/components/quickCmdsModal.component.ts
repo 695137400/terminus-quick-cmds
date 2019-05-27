@@ -45,6 +45,8 @@ export class QuickCmdsModalComponent {
             let currentTab = tab as TerminalTabComponent
             console.log("Sending " + cmd);
             currentTab.sendInput(cmd)
+        }else {
+            tab.focusedTab.session.write(cmd); //Solve the latest version can not be used
         }
     }
 
